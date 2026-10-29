@@ -1,0 +1,50 @@
+import argparse
+import json
+import os
+import sys
+import time
+
+parser = argparse.ArgumentParser(description="master ip help")
+parser.add_argument('--mode', default='hybrid')
+
+args = parser.parse_args()
+group_id = None
+if args.mode == "decode" or args.mode == "hybrid":
+    group_id = "0"
+if args.mode == "prefill":
+    group_id = "2"
+
+# 获取文件路径
+json_file_path = os.getenv('GLOBAL_RANK_TABLE_FILE_PATH')
+
+# 检查环境变量是否设置
+if not json_file_path:
+    print("环境变量 GLOBAL_RANK_TABLE_FILE_PATH 未设置")
+    sys.exit(1)
+
+# 尝试打开和读取 JSON 文件
+while True:
+    try:
+        with open(json_file_path, 'r') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"读取文件 {json_file_path} 时出错: {e}")
+        sys.exit(1)
+    if data.get('status', "") != "completed":
+        time.sleep(30)
+    else:
+        break
+
+# 查找 group_id 为 0 的 server_ip
+server_ip = None
+for group in data.get('server_group_list', []):
+    if group.get('group_id') == group_id:
+        server_ip = group['server_list'][0].get('server_ip')
+        break
+
+# 输出找到的 IP 地址
+if server_ip:
+    print(server_ip)
+else:
+    print("没有找到 group_id 为 0 的 server_ip")
+    sys.exit(1)

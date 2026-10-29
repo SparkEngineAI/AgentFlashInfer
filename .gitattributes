@@ -1,0 +1,15 @@
+# 对任意文本文件，在检出时统一使用 LF
+* text eol=lf
+
+*.wav binary
+*.mp3 binary
+*.flac binary
+*.ogg binary
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+
+*.mp4 binary
+*.model binary

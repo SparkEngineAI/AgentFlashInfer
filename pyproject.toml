@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Pangu_infer"
+version = "0.1.0"
+description = "A Library of Pangu infer feature with vllm and vllm_ascend"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "deepmerge",
+    "urllib3==1.26.7"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.15.5"]
+
+[tool.setuptools.packages.find]
+include = ["pangu_infer"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+force-exclude = true
+
+extend-exclude = [
+    ".claude",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__"
+]
+
+[tool.ruff.lint]
+select = [
+    "F",       # pyflakes: 未定义名称、未使用 import
+    "W291",    # 行尾空白
+    "W293",    # 空行含空白
+    "E501",    # 行过长
+    "I001",    # import 排序
+    "UP006",   # PEP 585: List[int] -> list[int]
+    "UP007",   # PEP 604: Union[X, Y] -> X | Y
+    "UP008",   # super() 无参数化
+    "UP015",   # 冗余 open 模式
+    "UP032",   # f-string 替代 .format()
+    "Q000",    # 内联字符串引号一致性
+    "B010",    # set-attr-with-constant
+    "B905",    # zip 缺少 strict
+    "RSE102",  # raise 不必要括号
+    "C420",    # 不必要 dict comprehension
+    "PIE804",  # 不必要 dict kwargs
+    "N801",    # 类命名规范
+]
+
+[tool.ruff.lint.pep8-naming]
+extend-ignore-names = [
+    "Pangu_*",
+    "AscendQwen2_*",
+    "NPU_*",
+    "MCP_Hub",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pangu_infer"]
+force-sort-within-sections = true
+lines-after-imports = 2
+
+[tool.ruff.lint.per-file-ignores]
+# patch 代码保持与上游风格一致，仅保留安全检查
+"agentic/inference/pangu_infer/patches/**" = ["N801", "UP006", "UP007", "Q000"]
+"agentic/inference/pangu_infer/models/**" = ["N801", "UP006", "UP007", "Q000"]
+# 测试放宽类命名
+"agentic/tests/**" = ["N801"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true

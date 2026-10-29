@@ -1,0 +1,57 @@
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Frontend dependencies and generated files
+node_modules/
+.umi/
+.umi-production/
+
+# Local configuration and secrets
+.env
+agentic/config/.env
+
+# Runtime data and experiment artifacts
+workspace/
+logs/
+session_logs/
+output/
+outputs/
+runs/
+checkpoints/
+agentic/ci_logs/
+.wednesday/
+wandb/
+kernel_meta/
+*.milvus*
+agentic/tests/unified_store/test_work_space/
+
+# Temporary and editor files
+*.log
+*.temp
+*.tmp
+*.orig
+.nfs*
+.cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~

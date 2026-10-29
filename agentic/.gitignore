@@ -1,0 +1,8 @@
+__pycache__/
+test/
+output/
+.env
+logs/
+agentic_project.egg-info/
+workspace/
+*.milvus*

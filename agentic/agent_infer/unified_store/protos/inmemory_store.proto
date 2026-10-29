@@ -1,0 +1,37 @@
+syntax = "proto3";
+package memorystore;
+
+// gRPC 服务定义
+service InMemoryStore {
+  rpc grpcPut(putRequest) returns (putResponse);
+  rpc grpcGet(getRequest) returns (getResponse);
+  rpc grpcDelete(deleteRequest) returns (deleteResponse);
+}
+
+// Put 请求，新增可选 TTL 字段（秒）
+message putRequest {
+  repeated string namespace = 1;
+  string topic            = 2;
+  map<string, bytes> data = 3;
+  // <=0 或不填 表示不过期
+  optional int32 ttl      = 4;
+}
+message putResponse {}
+
+// Get 请求，新增可选 reset_ttl 字段
+message getRequest {
+  repeated string namespace = 1;
+  string topic            = 2;
+  // true 表示读取时重置原始 TTL
+  optional bool reset_ttl  = 3;
+}
+message getResponse {
+  bool exists             = 1;
+  map<string, bytes> data = 2;
+}
+
+message deleteRequest {
+  repeated string namespace = 1;
+  string topic            = 2;
+}
+message deleteResponse {}

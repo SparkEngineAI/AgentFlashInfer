@@ -1,0 +1,37 @@
+# Core
+qwen-agent>=0.0.26
+openai>=1.0.0
+transformers>=4.40.0
+fastapi>=0.110.0
+uvicorn>=0.30.0
+sse-starlette>=2.0.0
+pydantic>=2.0.0
+requests>=2.31.0
+
+# Tool: search / scholar (no extra deps, uses stdlib http.client)
+
+# Tool: visit
+tiktoken>=0.7.0
+json5>=0.9.0
+
+# Tool: python (SandboxFusion)
+# Install separately: pip install sandbox-fusion
+# See: https://github.com/bytedance/SandboxFusion
+
+# Tool: file parsing
+pdfplumber>=0.10.0
+python-docx>=1.0.0
+python-pptx>=1.0.0
+tabulate>=0.9.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+charset-normalizer>=3.3.0
+pillow>=10.0.0
+
+# Tool: IDP cloud parsing (optional)
+# alibabacloud-docmind-api20220711>=1.4.0
+# alibabacloud-tea-openapi>=0.4.0
+# alibabacloud-credentials>=1.0.0
+
+# Tool: video/audio analysis (optional)
+# dashscope>=1.20.0

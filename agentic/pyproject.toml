@@ -1,0 +1,5 @@
+[project]
+name = "agentic_project"
+version = "0.1.0"
+
+[tool.setuptools.packages.find]
