@@ -458,10 +458,30 @@ Copyright (c) 2026 Huawei Technologies Co., Ltd.
   year={2025}
 }
 
-@article{gao2026agentcollab,
-  title={AgentCollab: A Self-Evaluation-Driven Collaboration Paradigm for Efficient LLM Agents},
-  author={Gao, Wenbo and Liu, Renxi and Wang, Xian and Guo, Fang and Yang, Shuai and Chen, Xi and Zhen, Hui-Ling and Chen, Hanting and Lin, Weizhe and Li, Xiaosong and others},
-  journal={arXiv preprint arXiv:2603.26034},
-  year={2026}
+@inproceedings{gao-etal-2026-agentcollab,
+    title = "{A}gent{C}ollab: A Self-Evaluation-Driven Collaboration Paradigm for Efficient {LLM} Agents",
+    author = "Gao, Wenbo  and
+      Liu, Renxi  and
+      Wang, Xian  and
+      Fang, Guo  and
+      Yang, Shuai  and
+      xi, Chen  and
+      Zhen, Hui-Ling  and
+      Chen, Hanting  and
+      Lin, Weizhe  and
+      Li, Xiaosong  and
+      Wang, Yaoyuan",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.2400/",
+    pages = "54555--54570",
+    ISBN = "979-8-89176-459-0"
 }
 ```
