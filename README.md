@@ -437,9 +437,6 @@ Run logs are written to `agentic/ci_logs/`. If both routing URLs target the same
 | Document | Path |
 |----------|------|
 | Installation Guide | [agentic/inference/docs/install.md](agentic/inference/docs/install.md) |
-| Developer Guide | [agentic/inference/docs/developer_guide.md](agentic/inference/docs/developer_guide.md) |
-| Code Style Guide | [agentic/inference/docs/code_style_guide.md](agentic/inference/docs/code_style_guide.md) |
-| Development Rules | [agentic/inference/docs/development_rules.md](agentic/inference/docs/development_rules.md) |
 
 ---
 

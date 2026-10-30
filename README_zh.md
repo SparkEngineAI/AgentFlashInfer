@@ -437,9 +437,6 @@ curl --noproxy '*' -fsS http://127.0.0.1:8289/api/submit \
 | 文档 | 路径 |
 |------|------|
 | 安装指南 | [agentic/inference/docs/install.md](agentic/inference/docs/install.md) |
-| 开发者指南 | [agentic/inference/docs/developer_guide.md](agentic/inference/docs/developer_guide.md) |
-| 代码风格 | [agentic/inference/docs/code_style_guide.md](agentic/inference/docs/code_style_guide.md) |
-| 开发规范 | [agentic/inference/docs/development_rules.md](agentic/inference/docs/development_rules.md) |
 
 ---
 
